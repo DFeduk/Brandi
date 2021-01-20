@@ -1,0 +1,45 @@
+@import "variables";
+$container-max-widths: (
+  // sm: 540px,
+  md: 768px,
+  lg: 992px,
+  xl: 1169px,
+  xxl: 1170px
+) !default;
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-monospace: 'Pacifico', cursive;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          800 !default;
+$nav-link-color: #fff;
+$nav-link-hover-color: white;
+$link-color: white;
+$link-decoration: none; 
+$h1-font-size: 62px;
+$h2-font-size: 48px;
+$h3-font-size: 28px;
+$h4-font-size: 20px;
+$h5-font-size: 18px;
+$h6-font-size: 14px;
+$headings-font-weight:$font-weight-bolder;
+$body-color: #5f5663;
+$line-height-lg: 24px;
+
+
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-x: 0px;
+
+
+$navbar-brand-font-size:28px;
+
+$font-weight-base: 400;
+$font-size-base: 0.875rem;
+$nav-link-font-size: 0.813rem;
+$navbar-brand-padding-y: 0;
+
+$dark: rgba(16, 22, 54, 0.2);
+
+
+
