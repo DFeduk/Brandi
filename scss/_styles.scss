@@ -501,7 +501,7 @@ figure {
       border-left: 1px solid transparent;
       font-size: 0.8125rem;
       color: black;
-      padding-bottom: 16px;
+      padding-bottom: 18px;
       &:focus {
           outline: transparent;
       }
@@ -511,7 +511,7 @@ figure {
       } 
   }
   textarea {
-    margin: 0 0 34px;
+    margin-bottom: 27px;
     padding: 0px;
     resize: none;
   }
@@ -523,8 +523,8 @@ figure {
     background: url('../../svg/mail.svg')no-repeat left;
     background-position-y: center;
     background-position-x: left;
-    float: right;
     padding-left: 34px;
+    padding-right: 0px;
     
   }
 }
