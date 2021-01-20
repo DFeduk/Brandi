@@ -18,7 +18,7 @@ a {
   @include media-breakpoint-down(md){
     .collapse {
       margin-top: 7px;
-      background: rgba(14, 180, 147, 0.75);
+      background: #0eb493;
     }
   }
   .navbar-brand {
@@ -500,7 +500,7 @@ figure {
       border-right: 1px solid transparent;
       border-left: 1px solid transparent;
       font-size: 0.8125rem;
-      color: #adb1b6;
+      color: black;
       padding-bottom: 16px;
       &:focus {
           outline: transparent;

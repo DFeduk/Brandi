@@ -1,5 +1,5 @@
 var myCarousel = document.querySelector('#carouselExampleCaptions')
 var carousel = new bootstrap.Carousel(myCarousel, {
-  interval: false,
-  wrap: false,
+  interval: 5000,
+  wrap: true,
 })
