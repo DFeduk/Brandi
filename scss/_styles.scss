@@ -393,6 +393,14 @@ h4 {
     position: relative;
     margin-bottom: 46px;
     margin-top: 20px;
+    &:hover {
+      background: $base-color;
+      border: $dark-blue;
+      transition: all 0.45s ease;
+      .facts-icon-inner {
+        color: $dark-blue;
+      }
+    }
     .facts-icon-inner {
       font-size: 39px;
       color: #fff;
