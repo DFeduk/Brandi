@@ -396,7 +396,8 @@ h4 {
     &:hover {
       background: $base-color;
       border: $dark-blue;
-      transition: all 0.45s ease;
+      transition: all 2s ease-in;
+      transform: rotateY(360deg);
       .facts-icon-inner {
         color: $dark-blue;
       }
