@@ -25,8 +25,9 @@ $h5-font-size: 18px;
 $h6-font-size: 14px;
 $headings-font-weight:$font-weight-bolder;
 $body-color: #5f5663;
-$line-height-lg: 24px;
-
+$line-height-sm: 1.2;
+$line-height-base:              1.5 !default;
+$line-height-lg:              1.85 !default;
 
 $navbar-padding-y: 0;
 $navbar-nav-link-padding-x: 0px;

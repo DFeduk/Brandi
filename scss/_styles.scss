@@ -9,134 +9,122 @@ a {
 .list-group {
   list-style-type: none;
 }
+figure {
+  margin: 0;
+}
+.parallax {
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .header-wrapper {
   background: $dark;
   position: absolute;
   z-index: 100;
-}
-.navbar {
-  @include media-breakpoint-down(md){
-    .collapse {
-      margin-top: 7px;
-      background: #0eb493;
-    }
-  }
-  .navbar-brand {
-    color: white;
-    font-family: $font-family-monospace;
-    display: contents;
-    letter-spacing: 0.4px;
-    &:hover{
-      color: white;
-    }
-  }
-  .slogan {
-    font-size: 13px;
-    color: #536462;
-    margin-left: 55px;
-    font-family: $font-family-sans-serif;
-    letter-spacing: 0.4px;
-    position: relative;
-    &::before {
-      content: "";
-      width: 1px;
-      height: 17px;
-      background: rgba(45,161,218,.3);
-      position: absolute;
-      left: -23px;
-      top: 2px;
-    }
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  .burger {
-   padding: unset;
-   margin-right: .75rem;
-   margin-top: .25rem;
-   border: none;
-  }
-  .bar-icon {
-    color: white;
-    font-size: 20px;
-  }
-  .navbar-nav li a {
-    border-top: 1px solid transparent;
-  }
-  
-  #current,
-  .navbar-nav li a:focus,
-  .navbar-nav li a:hover {
-    background: rgba(16,22,54,.45);
-    @include media-breakpoint-up (md) {
-      background-color: transparent;
-      border-top: 1px solid #32B0EE;
-    }
-  }
-  .navbar-nav {
+  .navbar {
     @include media-breakpoint-down(md){
-      height: 100vh;
-      justify-content: space-around;
-    }
-    .nav-link {
-      text-align: center;
-      margin-left: 37px;
-      @include media-breakpoint-up(md) {
-        text-align: left;
-      }
-      @include media-breakpoint-down(md) {
-        margin-left: unset;
+      .collapse {
+        margin-top: 7px;
+        background: $base-color;
       }
     }
+    .navbar-brand {
+      color: white;
+      font-family: $font-family-monospace;
+      letter-spacing: 0.4px;
+      &:hover{
+        color: white;
+      }
+    }
+    .slogan {
+      font-size: 13px;
+      color: $slogan-color;
+      margin-left: 55px;
+      font-family: $font-family-sans-serif;
+      letter-spacing: 0.4px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 1px;
+        height: 17px;
+        background: rgba(45,161,218,.3);
+        position: absolute;
+        left: -23px;
+        top: 2px;
+      }
+    }
+    .burger {
+     padding: unset;
+     margin-right: .75rem;
+     margin-top: .25rem;
+     border: none;
+    }
+    .bar-icon {
+      color: white;
+      font-size: 20px;
+    }
+    .navbar-nav li a {
+      border-top: 1px solid transparent;
+    }
+    #current,
+    .navbar-nav li a:focus,
+    .navbar-nav li a:hover {
+      background: rgba(16,22,54,.45);
+      @include media-breakpoint-up (md) {
+        background-color: transparent;
+        border-top: 1px solid $navbar-nav-li-border;
+      }
+    }
+    .navbar-nav {
+      @include media-breakpoint-down(md){
+        height: 100vh;
+        justify-content: space-around;
+      }
+      .nav-link {
+        text-align: center;
+        margin-left: 37px;
+        @include media-breakpoint-up(md) {
+          text-align: left;
+        }
+        @include media-breakpoint-down(md) {
+          margin-left: unset;
+        }
+      }
+    }
+    @media (min-width: 768px) {
+    .navbar-nav>li>a {
+      padding: $navbar-nav-link-padding-y 0px;
+    }
   }
-  @media (min-width: 768px) {
-  .navbar-nav>li>a {
-    padding: $navbar-nav-link-padding-y 0px;
   }
 }
-}
-
 .carousel-caption {
   bottom: 17%;
-}
-.carousel-caption h1 {
-  font-weight: $font-weight-light;
-  margin-bottom: 0px;
-}
-
-.carousel-caption h2 {
-  font-weight: $font-weight-light;
-  margin: 3px 0 18px;
-}
-.color {
-  color: $span-color;
-}
-
-.carousel-caption p {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-.carousel-caption p:before,
-.carousel-caption p:after {
-color: $span-color;
-content: "____";
-position: relative;
-top: -8px;
-}
-
-.carousel-caption p:before {
-  right: 33px;
-}
-
-.carousel-caption p:after {
-  left: 33px;
-}
-.fix {
-  margin-top: -12%;
-
+  h2 {
+    margin: 3px 0 18px;
+  }
+  .span-color {
+    color: $span-color;
+  }
+  p {
+    color: #fff;
+    font-size: 18px;
+    &::before,
+    &::after {
+      color: $span-color;
+    content: "____";
+    position: relative;
+    top: -8px;
+    }
+    &::before {
+      right: 33px;
+    }
+    &::after {
+      left: 33px;
+    }
+  }
 }
 .socials {
   z-index: 1;
@@ -145,26 +133,19 @@ top: -8px;
   font-size: 20px;
   margin-top: -100px;
   width: 100%;
-  display: flex;
-  justify-content: center;
   @include media-breakpoint-down(lg) {
     display: none;
   }
+  li {
+    margin-left: 10px;
+    a {
+      color: rgba(255, 255, 255, 0.3);
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
 }
-.socials li {
-  display: flex;
-  margin-left: 10px;
-}
-
-.socials li a {
-  color: rgba(255, 255, 255, 0.3);
-  text-decoration: none;
-}
-
-.socials li a:hover {
-  color: #fff;
-}
-
 .carousel-indicators {
   bottom: 10px;
   left: inherit;
@@ -172,41 +153,42 @@ top: -8px;
   right: 30px;
   top: 0;
   flex-direction: column;
+  li {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: none;
+    border-radius: 5px;
+    height: 8px;
+    width: 8px;
+    margin-bottom: 15px;
+  }
+  .active {
+    height: 8px;
+    width: 8px;
+    background: white;
+  }
 }
-
-.carousel-indicators li {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: none;
-  border-radius: 5px;
-  height: 8px;
-  width: 8px;
-  margin-bottom: 15px;
-}
-
-.carousel-indicators .active {
-  height: 8px;
-  width: 8px;
-  background: white;
+.features {
+  background: $features-bg;
+  padding-bottom: 100px;
 }
 .heading { 
   text-align: center;
   span {
-    color: #c3c6c7;
+    color: $heading-span-color;
     &::before,
     &::after {
-    color:  #c3c6c7;
-  content: "_______________";
-  position: relative;
-  top: -7px;
+    color:  $heading-span-color;
+    content: "_______________";
+    position: relative;
+    top: -7px;
   }
-  &::before {
+    &::before {
     right: 15px;
-  }
-  &::after {
+    }
+    &::after {
     left: 15px;
+    }
   }
-  }
-  
 }
 h3 {
   margin-top: $headings-margin-top;
@@ -218,14 +200,12 @@ h3 {
   }
 }
 .features-item {
-  display: flex;
   margin-top: 56px;
   span {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 1px solid $features-icon;
-    display: flex;
     justify-content: center;
     align-items: center;
     i {
@@ -239,10 +219,6 @@ h4 {
   margin-bottom: 1.125rem;
   color: $dark-blue;
 }
-.features {
-  background-color: #f4f7f9;
-  padding-bottom: 100px;
-}
 .feature-desc {
   margin-left: 20px;
   margin-top: 4px;
@@ -253,7 +229,7 @@ h4 {
 .sub-title {
   p {
     font-size: 1.125rem;
-    color: #6c5a63;
+    color: $subtitle-p-color;
     font-weight: $font-weight-semi-bold;
     margin-top: 35px;
     margin-bottom: 45px;
@@ -264,10 +240,9 @@ h4 {
   ul li {
   display: inline-block;
   a {
-    color: #062033;
+    color: $dark-blue;
     display: block;
     font-size: 14px;
-    font-weight: 700;
     padding: 5px 23px;
     border-radius: 6px;
     text-transform: capitalize;
@@ -286,10 +261,6 @@ h4 {
     padding: 5px 23px;
   }
 }
-}
-
-figure {
-  margin: 0;
 }
 .work-item {
   position: relative;
@@ -324,16 +295,10 @@ figure {
       padding: 9px 10px;
     }
     h5 {
-      font-weight: $font-weight-bold;
-      line-height: $line-height-lg;
       margin: 25px 0 8px;
     }
-    p {
-      line-height: $line-height-lg;
-    }
-    } 
+  } 
 }
-
 .team {
   margin-bottom: 214px;
   @include media-breakpoint-down(md) {
@@ -349,6 +314,7 @@ figure {
   justify-content: center;
   &:hover .overlay {
     opacity: 1;
+    transition: all 0.45s ease;
   }
   &:hover strong {
     color: $base-color;
@@ -373,7 +339,6 @@ figure {
     opacity: 0;
     .team-info {
       color: #fff;
-      font-weight: $font-weight-bold;
       margin-bottom: 15px;
       display: block;
       font-size: 1rem;
@@ -381,7 +346,6 @@ figure {
     p {
     color: #fff;
     font-size: 1rem;
-    font-weight: $font-weight-normal;
     }
     .team-links {
       flex-direction: row;
@@ -389,9 +353,6 @@ figure {
       li {
         width: 42px;
         height: 42px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         background-color: rgba(0,0,0,.3);
         margin-right: 4px;
         i {
@@ -402,7 +363,7 @@ figure {
         }
       }
     }
-}
+  }
   strong {
     color: $dark-blue;
     font-size: 1.125rem;
@@ -415,13 +376,6 @@ figure {
     font-size: 0.8125rem;
   }
 }
-.parallax {
-  height: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .facts {
   background-image: url('../../images/facts-bg.jpg');
   padding-bottom: 93px;
@@ -432,11 +386,8 @@ figure {
   .facts-icon {
     width: 130px;
     height: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: transparent;
-    color: #6c7781;
+    color: $facts-icon-color;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.4);
     position: relative;
@@ -451,7 +402,6 @@ figure {
     font-size: 3.75rem;
     color: #fff;
     font-weight: $font-weight-semi-bold;
-    line-height: 72px;
   }
   .facts-text {
     font-size: 1.125rem;
@@ -461,27 +411,25 @@ figure {
 }
 .contact {
   a {
-    color: #79676e;
+    color: $contact-a-color;
   }
   .small-title {
-    color: #384d5c;
+    color: $small-title-color;
     margin-bottom: 65px;
   }
   .contact-text {
     color: $dark-blue;
     font-size: 22px;
-    line-height: 32px;
     margin-bottom: 35px;
-    display: block;
   }
   .contacts-info {
     margin-bottom: 4px;
-    color: #6a737b;
+    color: $contacts-info-color;
   }
   .form-title {
     margin-bottom: 50px;
     font-size: 24px;
-    color: #062033;
+    color: $dark-blue;
   }
   .contacts-form {
     margin-bottom: 100px;
@@ -507,7 +455,7 @@ figure {
       }
       &::placeholder {
         font-size: 0.8125rem;
-        color: #adb1b6;
+        color: $textarea-placeholder-color;
       } 
   }
   textarea {
@@ -541,7 +489,10 @@ figure {
       margin-left: 20px;
     }
     a {
-      color: #cdd2d6;
+      color: $contact-links-a-color;
+      &:hover {
+        color: $base-color;
+      }
     }
   }
 }
@@ -552,7 +503,7 @@ figure {
 }
 .footer {
   border-top: 5px solid $dark-blue;
-  background: #1ea78d;
+  background: $footer-bg-color;
   padding-bottom: 100px;
   padding-top: 92px;
   @include media-breakpoint-down(lg) {
@@ -565,7 +516,6 @@ figure {
     }
   }
   .footer-brand {
-    display: inline-block;
     font-family: $font-family-monospace;
     font-size: 1.75rem;
     letter-spacing: 1.4px;
@@ -575,7 +525,6 @@ figure {
   .footer-text {
     font-size: 0.8125rem;
     color: #fff;
-    line-height: 1.85;
   }
   .footer-mail-title {
     color: rgba(255,255,255,.8);
@@ -635,7 +584,17 @@ figure {
 }
 .mover {
   margin-top: 65px;
+  position: relative;
   @include media-breakpoint-down(lg) {
     text-align: center;
+  }
+  &::before {
+    content: "";
+    width: 1px;
+    height: 44px;
+    background: rgba($color: $dark-blue, $alpha: 0.3);
+    position: absolute;
+    left: -13px;
+    top: 2px;
   }
 }
